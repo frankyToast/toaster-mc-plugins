@@ -1,0 +1,4 @@
+name: toasterPlugins
+version: '${project.version}'
+main: frankytoast.toasterplugins.ToasterPlugins
+api-version: 1.19
