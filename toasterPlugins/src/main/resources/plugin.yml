@@ -6,7 +6,7 @@ commands:
   setHome:
     description: "Set the home you will always teleport to"
     usage: /<command>
-    aliases: [set home, sethome, set Home]
+    aliases: sethome
 
   home:
     description: "Teleports you to your home"
