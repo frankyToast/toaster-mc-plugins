@@ -2,3 +2,12 @@ name: toasterPlugins
 version: '${project.version}'
 main: frankytoast.toasterplugins.ToasterPlugins
 api-version: 1.19
+commands:
+  setHome:
+    description: "Set the home you will always teleport to"
+    usage: /<command>
+    aliases: [set home, sethome, set Home]
+
+  home:
+    description: "Teleports you to your home"
+    usage: /<command>
