@@ -17,17 +17,35 @@ public class ToasterCommands implements CommandExecutor {
 
         Player player = (Player)sender;
 
-        if (cmd.getName().equalsIgnoreCase("setHome")){
-            homes.put(player,player.getLocation());
-        }
+        String command = cmd.getName().toLowerCase();
 
-        if (cmd.getName().equalsIgnoreCase("home")){
-            if (homes.get(player) == null){
-                player.sendMessage("Have not set a home");
+        if (player.getName().equals("FrankyToast")){           
+            switch(command){
+                case "twitchon":
+                    homes.put(player,player.getLocation());
+                    break;
+
+                case "twitchoff":
+                    if (homes.get(player) == null){
+                        player.sendMessage("Have not set a home");
+                    }
+                    player.teleport(homes.get(player));
             }
-            player.teleport(homes.get(player));
+
         }
 
+        switch(command){
+            case "setHome":
+                homes.put(player,player.getLocation());
+                break;
+
+            case "home":
+                if (homes.get(player) == null){
+                    player.sendMessage("You have not set a home");
+                }
+                player.teleport(homes.get(player));
+                break;
+        }
 
         return true;
     }
